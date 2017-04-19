@@ -1,0 +1,223 @@
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myQrtzScheduleJobLabel"
+            translate="jobserverApp.qrtzScheduleJob.home.createOrEditLabel">Create or edit a Qrtz Schedule Job</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.qrtzScheduleJob.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   ng-model="vm.qrtzScheduleJob.id" readonly/>
+        </div>
+        <table class="table table-bordered  table-condensed dataTables-example dataTable no-footer">
+            <tbody>
+            <tr>
+                <td class="width-15 active"><label class="pull-right" translate="jobserverApp.qrtzScheduleJob.jobName"
+                                                   for="field_jobName">Job Name</label></td>
+                <td class="width-35"><input type="text" class="form-control" name="jobName" id="field_jobName"
+                                            ng-model="vm.qrtzScheduleJob.jobName"
+                                            required/>
+                    <div ng-show="editForm.jobName.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.jobName.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>
+                <td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.jobGroup" for="field_jobGroup">Trigger
+                        Type</label>
+                </td>
+                <td class="width-35">
+                    <select id="field_jobGroup" name="jobGroup" class="form-control" ng-model="vm.qrtzScheduleJob.jobGroup" ng-options="x as y for (x,y) in jobGroup" required />
+                    <div ng-show="editForm.jobGroup.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.jobGroup.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.triggerType"
+                           for="field_triggerType">Trigger Type</label>
+                </td>
+                <td class="width-35">
+                    <select id="field_triggerType" name="triggerType" class="form-control" ng-model="vm.qrtzScheduleJob.triggerType" ng-options="x as y for (x,y) in triggerType" required>
+                    </select>
+                    <div ng-show="editForm.triggerType.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.triggerType.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>
+                <td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.cronExpression"
+                           for="field_cronExpression">Cron Expression</label>
+                </td>
+                <td class="width-35">
+                    <input type="text" class="form-control" name="cronExpression" id="field_cronExpression"
+                           ng-model="vm.qrtzScheduleJob.cronExpression"
+                           required/>
+                    <div ng-show="editForm.cronExpression.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.cronExpression.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.beanClass" for="field_beanClass">Bean
+                        Class</label>
+                </td>
+                <td class="width-35">
+                    <input type="text" class="form-control" name="beanClass" id="field_beanClass"
+                           ng-model="vm.qrtzScheduleJob.beanClass"
+                           required/>
+                    <div ng-show="editForm.beanClass.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.beanClass.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>
+                <td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.methodName"
+                           for="field_methodName">Method Name</label>
+                </td>
+                <td class="width-35">
+                    <input type="text" class="form-control" name="methodName" id="field_methodName"
+                           ng-model="vm.qrtzScheduleJob.methodName"
+                           required/>
+                    <div ng-show="editForm.methodName.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.methodName.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.isConcurrent"
+                           for="field_isConcurrent">Is Concurrent</label>
+                </td>
+                <td class="width-35">
+                    <select id="field_isConcurrent" name="isConcurrent" class="form-control" ng-model="vm.qrtzScheduleJob.isConcurrent" ng-options="x as y for (x,y) in isConcurrent" required>
+                    </select>
+                    <div ng-show="editForm.isConcurrent.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.isConcurrent.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>
+                <!--<td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.batchStatus"
+                           for="field_batchStatus">Batch Status</label>
+                </td>
+                <td class="width-35">
+                    <select id="field_batchStatus" name="batchStatus" class="form-control" ng-model="vm.qrtzScheduleJob.batchStatus" ng-options="x as y for (x,y) in batchStatus" required>
+                    </select>
+                    <div ng-show="editForm.batchStatus.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.batchStatus.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>-->
+                <td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.description" for="field_description">Description</label>
+                </td>
+                <td class="width-35">
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           ng-model="vm.qrtzScheduleJob.description"
+                           required/>
+                    <div ng-show="editForm.description.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.description.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.parameterJson" for="field_parameterJson">ParameterJson</label>
+                </td>
+                <td class="width-35" colspan="3">
+                    <input type="text" class="form-control" name="parameterJson" id="field_parameterJson"
+                           ng-model="vm.qrtzScheduleJob.parameterJson" placeholder="例如：key1=value;key2=value2"
+                    />
+                </td>
+                <!--<td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.description" for="field_description">Description</label>
+                </td>
+                <td class="width-35">
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           ng-model="vm.qrtzScheduleJob.description"
+                           required/>
+                    <div ng-show="editForm.description.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.description.$error.required" translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </td>-->
+            </tr>
+<!--            <tr>
+                <td class="width-15 active">
+                    <label class="pull-right control-label" translate="jobserverApp.qrtzScheduleJob.startDate"
+                           for="field_startDate">Start Date</label>
+                </td>
+                <td class="width-35">
+                    <div class="input-group">
+                    <input id="field_startDate" type="text" class="form-control" name="startDate"
+                           datetime-picker="{{dateformat}}" ng-model="vm.qrtzScheduleJob.startDate"
+                           is-open="vm.datePickerOpenStatus.startDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </div>
+                </td>
+                <td class="width-15 active">
+                    <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.endDate" for="field_endDate">End Date</label>
+                </td>
+                <td class="width-35">
+                    <div class="input-group">
+                    <input id="field_endDate" type="text" class="form-control" name="endDate"
+                           datetime-picker="{{dateformat}}" ng-model="vm.qrtzScheduleJob.endDate"
+                           is-open="vm.datePickerOpenStatus.endDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i
+                            class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </div>
+                </td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span
+            translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

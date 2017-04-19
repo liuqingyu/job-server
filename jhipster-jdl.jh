@@ -1,0 +1,52 @@
+
+entity QrtzScheduleJob
+{
+    jobName String required,
+    jobGroup String required,
+    triggerType String required,
+    cronExpression String required,    
+    beanClass String required,
+    methodName String required,
+    parameterJson String,
+    isConcurrent String required,
+    batchStatus String required,
+    batchTime ZonedDateTime,
+    description String required,
+    startDate ZonedDateTime,
+    endDate ZonedDateTime,
+    createTime ZonedDateTime,
+    createBy String,
+    updateTime ZonedDateTime,
+    updateBy String 
+}
+
+entity QrtzSystemOperlog
+{
+    operParam String,
+    operResult String,
+    operType String,
+    startTime ZonedDateTime,
+    endTime ZonedDateTime,
+    duration Long,
+    success String,
+    triggerName String,
+    userId String,
+    userName String,
+    beanClass String,
+    methodName String
+}
+
+relationship ManyToOne
+{
+		QrtzSystemOperlog{job} to QrtzScheduleJob
+}
+
+// Set pagination options
+paginate QrtzScheduleJob, QrtzSystemOperlog with infinite-scroll
+paginate QrtzSystemOperlog with pagination
+paginate QrtzScheduleJob  with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

@@ -1,0 +1,66 @@
+
+<div>
+    <h2><span translate="jobserverApp.qrtzSystemOperlog.detail.title">Qrtz System Operlog</span> {{vm.qrtzSystemOperlog.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.jobName">Job Name</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.jobName}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.operParam">Oper Param</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.operParam}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.operResult">Oper Result</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.operResult}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.operType">Oper Type</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.operType}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.startTime">Start Time</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.startTime | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.endTime">End Time</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.endTime | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.duration">Duration</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.duration}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.success">Success</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.success}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.triggerName">Trigger Name</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.triggerName}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.userId">User Id</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.userId}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.userName">User Name</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.userName}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.beanClass">Bean Class</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.beanClass}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzSystemOperlog.methodName">Method Name</span></dt>
+        <dd>
+            <span>{{vm.qrtzSystemOperlog.methodName}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

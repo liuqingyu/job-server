@@ -1,0 +1,106 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "jobName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "jobGroup",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "triggerType",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cronExpression",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "beanClass",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "methodName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "parameterJson",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isConcurrent",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "batchStatus",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "batchTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updateTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updateBy",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160901031423",
+    "entityTableName": "qrtz_schedule_job",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

@@ -1,0 +1,109 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myQrtzSystemOperlogLabel" translate="jobserverApp.qrtzSystemOperlog.home.createOrEditLabel">Create or edit a Qrtz System Operlog</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.qrtzSystemOperlog.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.qrtzSystemOperlog.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.operParam" for="field_operParam">Oper Param</label>
+            <input type="text" class="form-control" name="operParam" id="field_operParam"
+                    ng-model="vm.qrtzSystemOperlog.operParam"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.operResult" for="field_operResult">Oper Result</label>
+            <input type="text" class="form-control" name="operResult" id="field_operResult"
+                    ng-model="vm.qrtzSystemOperlog.operResult"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.operType" for="field_operType">Oper Type</label>
+            <input type="text" class="form-control" name="operType" id="field_operType"
+                    ng-model="vm.qrtzSystemOperlog.operType"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.startTime" for="field_startTime">Start Time</label>
+                <div class="input-group">
+                    <input id="field_startTime" type="text" class="form-control" name="startTime" datetime-picker="{{dateformat}}" ng-model="vm.qrtzSystemOperlog.startTime" is-open="vm.datePickerOpenStatus.startTime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.endTime" for="field_endTime">End Time</label>
+                <div class="input-group">
+                    <input id="field_endTime" type="text" class="form-control" name="endTime" datetime-picker="{{dateformat}}" ng-model="vm.qrtzSystemOperlog.endTime" is-open="vm.datePickerOpenStatus.endTime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.duration" for="field_duration">Duration</label>
+            <input type="number" class="form-control" name="duration" id="field_duration"
+                    ng-model="vm.qrtzSystemOperlog.duration"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.success" for="field_success">Success</label>
+            <input type="text" class="form-control" name="success" id="field_success"
+                    ng-model="vm.qrtzSystemOperlog.success"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.triggerName" for="field_triggerName">Trigger Name</label>
+            <input type="text" class="form-control" name="triggerName" id="field_triggerName"
+                    ng-model="vm.qrtzSystemOperlog.triggerName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.userId" for="field_userId">User Id</label>
+            <input type="text" class="form-control" name="userId" id="field_userId"
+                    ng-model="vm.qrtzSystemOperlog.userId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.userName" for="field_userName">User Name</label>
+            <input type="text" class="form-control" name="userName" id="field_userName"
+                    ng-model="vm.qrtzSystemOperlog.userName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.beanClass" for="field_beanClass">Bean Class</label>
+            <input type="text" class="form-control" name="beanClass" id="field_beanClass"
+                    ng-model="vm.qrtzSystemOperlog.beanClass"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jobserverApp.qrtzSystemOperlog.methodName" for="field_methodName">Method Name</label>
+            <input type="text" class="form-control" name="methodName" id="field_methodName"
+                    ng-model="vm.qrtzSystemOperlog.methodName"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="jobserverApp.qrtzSystemOperlog.job" for="field_job">Job</label>
+            <select class="form-control" id="field_job" name="job" ng-model="vm.qrtzSystemOperlog.jobId" ng-options="qrtzScheduleJob.id as qrtzScheduleJob.id for qrtzScheduleJob in vm.qrtzschedulejobs"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+    </div>
+</form>

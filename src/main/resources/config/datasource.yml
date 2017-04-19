@@ -1,0 +1,44 @@
+###################################
+# 缺省数据库地址 dev
+###################################
+dbServer:
+  default: localhost:3306
+  read: localhost:3306
+  write: localhost:3306
+datasource:
+  default:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/jobserver?useUnicode=true&characterEncoding=utf8&useSSL=false
+    name:
+    username: root
+    password: root
+    hikari:
+        data-source-properties:
+            cachePrepStmts: true
+            prepStmtCacheSize: 250
+            prepStmtCacheSqlLimit: 2048
+            useServerPrepStmts: true
+  read:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/jobserver?useUnicode=true&characterEncoding=utf8&useSSL=false
+    name:
+    username: root
+    password: root
+    hikari:
+        data-source-properties:
+            cachePrepStmts: true
+            prepStmtCacheSize: 250
+            prepStmtCacheSqlLimit: 2048
+            useServerPrepStmts: true
+  write:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/jobserver?useUnicode=true&characterEncoding=utf8&useSSL=false
+    name:
+    username: root
+    password: root
+    hikari:
+        data-source-properties:
+            cachePrepStmts: true
+            prepStmtCacheSize: 250
+            prepStmtCacheSqlLimit: 2048
+            useServerPrepStmts: true

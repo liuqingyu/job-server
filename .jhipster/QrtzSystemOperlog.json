@@ -1,0 +1,66 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "job",
+            "otherEntityName": "qrtzScheduleJob",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "operParam",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "operResult",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "operType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "success",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "triggerName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "beanClass",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "methodName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160901031424",
+    "entityTableName": "qrtz_system_operlog",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

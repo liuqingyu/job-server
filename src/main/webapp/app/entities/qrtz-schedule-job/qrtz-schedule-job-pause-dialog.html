@@ -1,0 +1,19 @@
+<form name="pauseForm" ng-submit="vm.confirmPause(vm.qrtzScheduleJob.id)">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" translate="entity.pause.title">Confirm pause operation</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <p translate="jobserverApp.qrtzScheduleJob.pause.question" translate-values="{id: '{{vm.qrtzScheduleJob.id}}'}">Are you sure you want to pause this Qrtz Schedule Job?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="pauseForm.$invalid" class="btn btn-warning">
+            <span class="glyphicon glyphicon-pause"></span>&nbsp;<span translate="entity.action.pause">Pause</span>
+        </button>
+    </div>
+</form>

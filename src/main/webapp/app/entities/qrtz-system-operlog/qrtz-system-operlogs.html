@@ -1,0 +1,73 @@
+<div>
+    <h2 translate="jobserverApp.qrtzSystemOperlog.home.title">Qrtz System Operlogs</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'jobserverApp.qrtzSystemOperlog.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="jobId"><span translate="jobserverApp.qrtzSystemOperlog.job">Job</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jobName"><span translate="jobserverApp.qrtzSystemOperlog.jobName">Job Name</span></th>
+                    <th jh-sort-by="startTime"><span translate="jobserverApp.qrtzSystemOperlog.startTime">Start Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="endTime"><span translate="jobserverApp.qrtzSystemOperlog.endTime">End Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="duration"><span translate="jobserverApp.qrtzSystemOperlog.duration">Duration</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="operResult"><span translate="jobserverApp.qrtzSystemOperlog.operResult">Oper Result</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="qrtzSystemOperlog in vm.qrtzSystemOperlogs track by qrtzSystemOperlog.id">
+                    <td>
+                        <a ui-sref="qrtz-schedule-job-detail({id:qrtzSystemOperlog.jobId})">{{qrtzSystemOperlog.jobId}}</a>
+                    </td>
+                    <td>{{qrtzSystemOperlog.jobName}}</td>
+                    <td>{{qrtzSystemOperlog.startTime | date:'medium'}}</td>
+                    <td>{{qrtzSystemOperlog.endTime | date:'medium'}}</td>
+                    <td>{{qrtzSystemOperlog.duration}}</td>
+                    <td>{{qrtzSystemOperlog.operResult}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="qrtz-system-operlog-detail({id:qrtzSystemOperlog.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="qrtz-system-operlog.delete({id:qrtzSystemOperlog.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

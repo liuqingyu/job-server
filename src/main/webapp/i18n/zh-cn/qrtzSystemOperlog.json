@@ -1,0 +1,35 @@
+{
+    "jobserverApp": {
+        "qrtzSystemOperlog" : {
+            "home": {
+                "title": "任务执行日志",
+                "createLabel": "创建新任务",
+                "createOrEditLabel": "Create or edit a Qrtz System Operlog",
+                "search": "搜索日志"
+            },
+            "created": "A new Qrtz System Operlog is created with identifier {{ param }}",
+            "updated": "A Qrtz System Operlog is updated with identifier {{ param }}",
+            "deleted": "日志删除成功",
+            "delete": {
+                "question": "确定要删除该日志吗?"
+            },
+            "detail": {
+                "title": "日志详情"
+            },
+            "operParam": "操作参数",
+            "operResult": "执行结果",
+            "operType": "操作类型",
+            "startTime": "开始时间",
+            "endTime": "结束时间",
+            "duration": "执行耗时",
+            "success": "是否成功",
+            "triggerName": "触发器名称",
+            "userId": "用户编号",
+            "userName": "用户名",
+            "beanClass": "类名",
+            "methodName": "方法名",
+            "job": "任务编号",
+            "jobName": "任务名称"
+        }
+    }
+}

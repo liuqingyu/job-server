@@ -1,0 +1,195 @@
+
+<div>
+    <h2><span translate="jobserverApp.qrtzScheduleJob.detail.title">Qrtz Schedule Job</span> {{vm.qrtzScheduleJob.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+<!--    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="jobserverApp.qrtzScheduleJob.jobName">Job Name</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.jobName}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.jobGroup">Job Group</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.jobGroup}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.triggerType">Trigger Type</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.triggerType}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.cronExpression">Cron Expression</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.cronExpression}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.beanClass">Bean Class</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.beanClass}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.methodName">Method Name</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.methodName}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.parameterJson">Parameter Json</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.parameterJson}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.isConcurrent">Is Concurrent</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.isConcurrent}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.batchStatus">Batch Status</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.batchStatus}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.batchTime">Batch Time</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.batchTime | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.description">Description</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.description}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.endDate">End Date</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.endDate | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.createTime | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.createBy">Create By</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.createBy}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.updateTime">Update Time</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.updateTime | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jobserverApp.qrtzScheduleJob.updateBy">Update By</span></dt>
+        <dd>
+            <span>{{vm.qrtzScheduleJob.updateBy}}</span>
+        </dd>
+    </dl>-->
+    <table class="table table-bordered  table-condensed dataTables-example dataTable no-footer">
+        <tbody>
+        <tr>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.jobName">Job Name</label>
+            </td>
+            <td class="width-35">
+                {{vm.qrtzScheduleJob.jobName}}
+            </td>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.jobGroup">Trigger Type</label>
+            </td>
+            <td class="width-35">
+                {{jobGroup[vm.qrtzScheduleJob.jobGroup]}}
+            </td>
+        </tr>
+        <tr>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.triggerType">Trigger Type</label>
+            </td>
+            <td class="width-35">
+                {{triggerType[vm.qrtzScheduleJob.triggerType]}}
+            </td>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.cronExpression">Cron Expression</label>
+            </td>
+            <td class="width-35">
+                {{vm.qrtzScheduleJob.cronExpression}}
+            </td>
+        </tr>
+
+        <tr>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.beanClass">Bean Class</label>
+            </td>
+            <td class="width-35">
+                {{vm.qrtzScheduleJob.beanClass}}
+            </td>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.methodName">Method Name</label>
+            </td>
+            <td class="width-35">
+                {{vm.qrtzScheduleJob.methodName}}
+            </td>
+        </tr>
+        <tr>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.isConcurrent">Is Concurrent</label>
+            </td>
+            <td class="width-35">
+                {{isConcurrent[vm.qrtzScheduleJob.isConcurrent]}}
+            </td>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.batchStatus">Batch Status</label>
+            </td>
+            <td class="width-35">
+                {{triggerStatus[vm.qrtzScheduleJob.jobStatus]}}
+            </td>
+        </tr>
+
+        <tr>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.parameterJson">ParameterJson</label>
+            </td>
+            <td class="width-35">
+                {{vm.qrtzScheduleJob.parameterJson}}
+            </td>
+            <td class="width-15 active">
+                <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.description">Description</label>
+            </td>
+            <td class="width-35">
+                {{vm.qrtzScheduleJob.description}}
+            </td>
+        </tr>
+        <!--            <tr>
+                        <td class="width-15 active">
+                            <label class="pull-right control-label" translate="jobserverApp.qrtzScheduleJob.startDate"
+                                   for="field_startDate">Start Date</label>
+                        </td>
+                        <td class="width-35">
+                            <div class="input-group">
+                            <input id="field_startDate" type="text" class="form-control" name="startDate"
+                                   datetime-picker="{{dateformat}}" ng-model="vm.qrtzScheduleJob.startDate"
+                                   is-open="vm.datePickerOpenStatus.startDate"
+                            />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startDate')"><i
+                                    class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                            </div>
+                        </td>
+                        <td class="width-15 active">
+                            <label class="pull-right" translate="jobserverApp.qrtzScheduleJob.endDate" for="field_endDate">End Date</label>
+                        </td>
+                        <td class="width-35">
+                            <div class="input-group">
+                            <input id="field_endDate" type="text" class="form-control" name="endDate"
+                                   datetime-picker="{{dateformat}}" ng-model="vm.qrtzScheduleJob.endDate"
+                                   is-open="vm.datePickerOpenStatus.endDate"
+                            />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="vm.openCalendar('endDate')"><i
+                                    class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                            </div>
+                        </td>
+                    </tr>-->
+        </tbody>
+    </table>
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+<!--    <button type="button" ui-sref="qrtz-schedule-job-detail.edit({id:vm.qrtzScheduleJob.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>-->
+</div>
